@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Completeness::VERSION
   spec.authors       = ["undr"]
   spec.email         = ["undr@yandex.ru"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Completeness is a way to add completeness progress (like in LinkedIn) into your application.}
+  spec.summary       = %q{Completeness is a way to add completeness progress (like in LinkedIn) into your application.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
