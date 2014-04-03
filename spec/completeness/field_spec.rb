@@ -51,7 +51,7 @@ describe Completeness::Field do
     end
 
     context 'with passed completeness check' do
-      let(:options){ { completeness_check: ->(o, v){
+      let(:options){ { check: ->(o, v){
         expect(o).to eq(object)
         expect(v).to eq(name)
         !v.nil?

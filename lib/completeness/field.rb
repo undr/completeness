@@ -33,8 +33,8 @@ module Completeness
     end
 
     def completeness_check
-      if options[:completeness_check].present? && options[:completeness_check].respond_to?(:call)
-        options[:completeness_check]
+      if options[:check].present? && options[:check].respond_to?(:call)
+        options[:check]
       else
         ->(obj, value){ value.present? }
       end
