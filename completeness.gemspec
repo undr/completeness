@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["undr@yandex.ru"]
   spec.description   = %q{Completeness is a way to add completeness progress (like in LinkedIn) into your application.}
   spec.summary       = %q{Completeness is a way to add completeness progress (like in LinkedIn) into your application.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/undr/completeness"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
