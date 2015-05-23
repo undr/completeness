@@ -15,7 +15,8 @@ module Completeness
     end
 
     def completed?(object)
-      completeness_check.call(object, object.send(name))
+      value = object.respond_to?(name) ? object.send(name) : nil
+      completeness_check.call(object, value)
     end
 
     def weight
@@ -33,6 +34,7 @@ module Completeness
     end
 
     def completeness_check
+
       if options[:check].present? && options[:check].respond_to?(:call)
         options[:check]
       else
