@@ -11,17 +11,20 @@ describe Completeness::DSL do
     context 'without global options' do
       let(:options){ {} }
 
-      its(:name){ should eq(:name) }
-      its(:options){ should eq(weight: 15) }
-      its(:spec){ should eq(dsl.spec) }
+      it "have global options" do
+        expect(subject.name).to be == :name
+        expect(subject.options).to be == {weight: 15}
+        expect(subject.spec).to be == dsl.spec
+      end
     end
 
     context 'with global options' do
       let(:options){ { required: true, weight: 20 } }
-
-      its(:name){ should eq(:name) }
-      its(:options){ should eq(required: true, weight: 15) }
-      its(:spec){ should eq(dsl.spec) }
+      it "override global options" do
+        expect(subject.name).to be == :name
+        expect(subject.options).to be == {required: true, weight: 15}
+        expect(subject.spec).to be == dsl.spec
+      end
     end
   end
 end

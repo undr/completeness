@@ -4,26 +4,26 @@ describe Completeness::Field do
   describe '#required?' do
     subject{ Completeness::Field.new(nil, :name) }
 
-    specify{ expect(subject.required?).to be_false }
+    specify{ expect(subject.required?).to be == false }
 
     context 'when :required equals to nil' do
       subject{ Completeness::Field.new(nil, :name, required: nil) }
-      specify{ expect(subject.required?).to be_false }
+      specify{ expect(subject.required?).to be == false }
     end
 
     context 'when :required equals to false' do
       subject{ Completeness::Field.new(nil, :name, required: false) }
-      specify{ expect(subject.required?).to be_false }
+      specify{ expect(subject.required?).to be == false }
     end
 
     context 'when :required equals to true' do
       subject{ Completeness::Field.new(nil, :name, required: true) }
-      specify{ expect(subject.required?).to be_true }
+      specify{ expect(subject.required?).to be == true }
     end
 
     context 'when :required equals to some object' do
       subject{ Completeness::Field.new(nil, :name, required: '') }
-      specify{ expect(subject.required?).to be_true }
+      specify{ expect(subject.required?).to be == true }
     end
   end
 
@@ -36,17 +36,17 @@ describe Completeness::Field do
     context 'with default behavior' do
       context 'when value is nil' do
         let(:name){ nil }
-        specify{ expect(subject.completed?(object)).to  be_false }
+        specify{ expect(subject.completed?(object)).to  be == false }
       end
 
       context 'when value is blank object' do
         let(:name){ '' }
-        specify{ expect(subject.completed?(object)).to  be_false }
+        specify{ expect(subject.completed?(object)).to  be == false }
       end
 
       context 'when value is present object' do
         let(:name){ 'object' }
-        specify{ expect(subject.completed?(object)).to  be_true }
+        specify{ expect(subject.completed?(object)).to  be == true }
       end
     end
 
@@ -59,17 +59,17 @@ describe Completeness::Field do
 
       context 'when value is nil' do
         let(:name){ nil }
-        specify{ expect(subject.completed?(object)).to  be_false }
+        specify{ expect(subject.completed?(object)).to  be == false }
       end
 
       context 'when value is blank object' do
         let(:name){ '' }
-        specify{ expect(subject.completed?(object)).to  be_true }
+        specify{ expect(subject.completed?(object)).to  be == true }
       end
 
       context 'when value is present object' do
         let(:name){ 'object' }
-        specify{ expect(subject.completed?(object)).to  be_true }
+        specify{ expect(subject.completed?(object)).to  be == true }
       end
     end
   end
