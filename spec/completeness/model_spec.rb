@@ -17,7 +17,7 @@ describe Completeness::Model do
   end
 
   describe '.completeness' do
-    let(:block){ ->(){} }
+    let(:block){ ->(o){} }
     let(:options){ {} }
     let(:dsl){ double(:dsl, spec: 'spec') }
     let(:klass){ Class.new{ include Completeness::Model } }

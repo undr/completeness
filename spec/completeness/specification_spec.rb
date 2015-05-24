@@ -180,29 +180,29 @@ describe Completeness::Specification do
       subject[:name3] = Completeness::Field.new(subject, :name3, required: true)
     end
 
-    specify{ expect(subject.completed?(object)).to be_false }
+    specify{ expect(subject.completed?(object)).to be == false }
 
     context 'when one required attribute is completed' do
       let(:name1_value){ 'value' }
-      specify{ expect(subject.completed?(object)).to be_false }
+      specify{ expect(subject.completed?(object)).to be == false }
     end
 
     context 'when one unrequired attribute is completed' do
       let(:name2_value){ 'value' }
-      specify{ expect(subject.completed?(object)).to be_false }
+      specify{ expect(subject.completed?(object)).to be == false }
     end
 
     context 'when all required attributes are completed' do
       let(:name1_value){ 'value' }
       let(:name3_value){ 'value' }
-      specify{ expect(subject.completed?(object)).to be_true }
+      specify{ expect(subject.completed?(object)).to be == true }
     end
 
     context 'when all attributes are completed' do
       let(:name1_value){ 'value' }
       let(:name2_value){ 'value' }
       let(:name3_value){ 'value' }
-      specify{ expect(subject.completed?(object)).to be_true }
+      specify{ expect(subject.completed?(object)).to be == true }
     end
   end
 end
